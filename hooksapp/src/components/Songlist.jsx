@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import uuid from "uuid/v1";
+import NewSongForm from "./NewSongForm";
+import AuthContextProvider from "./AuthContext";
 
 const SongList = () => {
   const [songs, setSongs] = useState([
@@ -8,17 +10,13 @@ const SongList = () => {
     { title: "This wild darkness", id: uuid() }
   ]);
 
-  let songTitle = null;
-  const addSong = event => {
-    if (songTitle) {
-      setSongs([...songs, { title: songTitle, id: uuid() }]);
-    }
-    event.preventDefault();
+  const addSong = title => {
+    setSongs([...songs, { title, id: uuid() }]);
   };
 
-  const handleChange = event => {
-    songTitle = event.target.value;
-  };
+  useEffect(() => {
+    console.log("useEffect hook ran", songs);
+  }, [songs]);
 
   return (
     <div className="song-list">
@@ -27,15 +25,9 @@ const SongList = () => {
           return <li key={i}>{song.title}</li>;
         })}
       </ul>
-      <form name="song-form" onSubmit={addSong}>
-        <input
-          name="songInput"
-          type="text"
-          onChange={handleChange}
-          value={songTitle}
-        />
-        <input type="submit" value="Add a Song" />
-      </form>
+      <AuthContextProvider>
+        <NewSongForm addSong={addSong} />
+      </AuthContextProvider>
     </div>
   );
 };
