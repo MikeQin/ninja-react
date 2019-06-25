@@ -1,13 +1,9 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 
-class AuthToggle extends Component {
-  static contextType = AuthContext;
-  render() {
-    const { toggleAuth } = this.context;
-    console.log(this.context);
-    return <button onClick={toggleAuth}>Toggle the Auth</button>;
-  }
-}
+const AuthToggle = () => {
+  const { toggleAuth } = useContext(AuthContext);
+  return <button onClick={toggleAuth}>Toggle Auth</button>;
+};
 
 export default AuthToggle;
