@@ -2,21 +2,27 @@
 
 ### Tutorials
 
-- YouTube: [React Context & Hooks Tutorials](https://youtu.be/6RhOzQciVwI?list=PL4cUxeGkcC9hNokByJilPg5g9m2APUePI)
-- Github: [React Context & Hooks](https://github.com/iamshaunjp/react-context-hooks)
+- Ninja YouTube: [React Context & Hooks Tutorials](https://youtu.be/6RhOzQciVwI?list=PL4cUxeGkcC9hNokByJilPg5g9m2APUePI)
+- Ninja Github: [React Context & Hooks](https://github.com/iamshaunjp/react-context-hooks)
+- This Repository: [ninja-react-context and hooks](https://github.com/MikeQin/ninja-react.git)
 
-## Git Clone This Repository
-
+### Context App
 ```
-git clone https://github.com/MikeQin/ninja-react.git
-
-# To run ContextApp
 cd ninja-react/contextapp
 npm install
 npm start
+```
 
-# To run HooksApp
+### Hooks App
+```
 cd ninja-react/hooksapp
+npm install
+npm start
+```
+
+### BookList App
+```
+cd ninja-react/booklist
 npm install
 npm start
 ```
