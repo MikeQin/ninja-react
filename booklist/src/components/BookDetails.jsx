@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { BookContext } from "../contexts/BookContext";
 
-const BookDetails = (({ book }) => {
+const BookDetails = ({ book, id }) => {
+  const { removeBook } = useContext(BookContext);
 
   return (
-    <div key={book.id}>
-      <h3>{book.title}</h3>
-    </div>
+    <li key={book.id} onClick={() => removeBook(book.id)}>
+      <div className="title">
+        {id + 1} Title: {book.title}
+      </div>
+      <div className="author">Author: {book.author}</div>
+    </li>
   );
-});
+};
 
 export default BookDetails;
