@@ -1,3 +1,21 @@
+# Booklist App
+
+This App uses React functional components and hooks including:
+- useState
+- useContext
+- useReducer
+- useEffect
+
+## The Design and Dependency
+* bookReducer -> uuid/v1
+* BookContext -> bookReducer, useEffect
+* Navbar -> BookContext, useContext
+* BookList -> BookContext, useContext
+* BookDetails -> BookContext, useContext
+* BookForm -> BookContext, useContext, useState
+  
+----
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
